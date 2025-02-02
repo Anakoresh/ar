@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR с павлином</title>
-    <!-- Подключаем A-Frame и AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <!-- Сцена AR -->
     <a-scene embedded arjs>
-      <!-- Камера AR -->
-      <a-entity camera></a-entity>
-      
-      <!-- Используем Hiro маркер -->
-      <a-marker type="hiro">
-        <!-- Вставляем 3D модель павлина -->
+      <a-marker preset="hiro">
         <a-entity gltf-model="url(peacock.glb)" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
       </a-marker>
-      
-      <!-- Задний фон для камеры -->
-      <a-entity position="0 0 -3" geometry="primitive: plane; width: 1; height: 1" material="color: red;"></a-entity>
+      <a-camera position="0 0 0"></a-camera>
     </a-scene>
   </body>
 </html>
